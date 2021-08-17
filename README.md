@@ -8,13 +8,13 @@
 
 # DEMO
 
-<div class="pull-left">
-    Left Column(좌측 단)
-
-</div>
-<div class="pull-right">
-    Right Column(우측 단)
-
-  
-</div>
-<hr>
+<table border="0">
+ <tr>
+    <td><b style="font-size:30px">Title</b></td>
+    <td><b style="font-size:30px">Title 2</b></td>
+ </tr>
+ <tr>
+    <td>Lorem ipsum ...</td>
+    <td>Lorem ipsum ...</td>
+ </tr>
+</table>
