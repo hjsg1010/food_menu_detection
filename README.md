@@ -60,7 +60,7 @@ food_menu_detection/
 ```
 
 ### change model.yaml file
-change $nc$ to 256 in yolov5/models/yolov5*.yaml 
+change *nc* to 256 in yolov5/models/yolov5*.yaml 
 
 ### Training using single gpu
 ```
