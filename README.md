@@ -10,7 +10,10 @@
 wget http://foodcam.mobi/dataset256.zip
 ```
 
-# How to train
+# Training
+---
+
+
 
 
 # DEMO
