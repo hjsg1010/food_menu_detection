@@ -58,6 +58,10 @@ food_menu_detection/
 ┃ ┗ yolov5x.pt
 ┣ README.md
 ```
+
+### change model.yaml file
+change $nc$ to 256 in yolov5/models/yolov5*.yaml 
+
 ### Training using single gpu
 ```
 python train.py --img 640 --batch 16 --epochs 600 --data ../data_yolo/food_yolo.yaml --weights yolov5s.pt
@@ -69,6 +73,10 @@ python -m torch.distributed.launch --nproc_per_node 4 train.py --img 640 --batch
 ```
 
 ## Results
+### Metrics 
+
+### Validation images examples
+
 
 
 ## DEMO
