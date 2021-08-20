@@ -11,13 +11,64 @@ wget http://foodcam.mobi/dataset256.zip
 ```
 
 ## Convert Food256 Dataset to YOLO format
-Please refer to the following link [data_yolo](./data_yolo)
+Please refer to the following directory [food256](./food256)
 
 ## Training
+### re-organize directories
+After converting dataset, my local repository looks like below tree:
+```
+food_menu_detection/
+┣ data_yolo/
+┃ ┣ images/
+┃ ┃ ┣ train/
+┃ ┃ ┗ valid/
+┃ ┣ labels/
+┃ ┃ ┣ train/
+┃ ┃ ┣ valid/
+┃ ┃ ┣ train.cache
+┃ ┃ ┗ valid.cache
+┃ ┗ food_yolo.yaml
+┣ food256/
+┃ ┣ README.md
+┃ ┣ food256.names
+┃ ┣ food256_split.ipynb
+┃ ┣ food256_to_yolo.ipynb
+┃ ┣ make_names.ipynb
+┃ ┣ test.txt
+┃ ┗ train.txt
+┣ yolov5/
+┃ ┣ data/
+┃ ┣ models/
+┃ ┣ runs/
+┃ ┣ utils/
+┃ ┣ wandb/
+┃ ┣ weights/
+┃ ┣ Dockerfile
+┃ ┣ LICENSE
+┃ ┣ README.md
+┃ ┣ __init__.py
+┃ ┣ detect.py
+┃ ┣ hubconf.py
+┃ ┣ requirements.txt
+┃ ┣ test.py
+┃ ┣ train.py
+┃ ┣ tutorial.ipynb
+┃ ┣ yolov5m.pt
+┃ ┣ yolov5s.pt
+┃ ┗ yolov5x.pt
+┣ README.md
+```
+### Training using single gpu
+```
+python train.py --img 640 --batch 16 --epochs 600 --data ../data_yolo/food_yolo.yaml --weights yolov5s.pt
+```
 
+### Training using multipe gpus
+```
+python -m torch.distributed.launch --nproc_per_node 4 train.py --img 640 --batch 16 --epochs 600 --data ../data_yolo/food_yolo.yaml --weights yolov5s.pt --devices 0,1,2,3 
+```
 
-
-
+## Results
 
 
 ## DEMO
