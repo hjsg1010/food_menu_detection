@@ -4,8 +4,8 @@
 runs/
 
 # data directory
-
-data_yolo/
+/data_yolo/images/
+/data_yolo/labels/
 
 # media & txt file
 *.gif

@@ -10,6 +10,8 @@
 wget http://foodcam.mobi/dataset256.zip
 ```
 
+# How to train
+
 
 # DEMO
 If you want to watch demo video of menu detection, click the figure below!
